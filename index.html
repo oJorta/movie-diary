@@ -21,13 +21,24 @@
             <p>🎥 Log, rate, and share your cinematic experiences with ease on Movie Diary.</p>
         </div>
 
-        <button class="add-movie">
+        <button id="add-movie">
             ➕ ADD MOVIE
         </button>
 
         <div class="movies-grid">
             <div class="movie-card">
-
+                <div class="movie-info">
+                    <h2>The Shining (1980)</h2>
+                    <p>Horror/Mystery</p>
+                    <p>directed by Stanley Kubrick</p>
+                    <p>2h 26m</p>
+                </div>
+                <div class="movie-poster">
+                </div>
+                <div class="watched-check">
+                    <input type="checkbox" name="watched" id="watched">
+                    <p>watched</p>
+                </div>
             </div>
             <div class="movie-card">
 
@@ -40,6 +51,41 @@
             </div>
             <div class="movie-card">
 
+            </div>
+        </div>
+
+        <div class="modal">
+            <div class="modal-content">
+                <h2>Add a new movie:</h2>
+                <form>
+                    <div class="form-row">
+                        <label for="name">Name</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Director</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Year</label>
+                        <input type="number" min="1888" max="2025" name="" id="">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Duration</label>
+                        <input type="time" name="" id="">
+                    </div>
+                    <div class="form-row">
+                        <label for="">Genre</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="form-row">
+                        <input type="checkbox" name="" id="">
+                        <label for="">Watched</label>
+                    </div>
+
+                    <button type="submit">➕ ADD</button>
+                       
+                </form>
             </div>
         </div>
     </main>
