@@ -31,8 +31,14 @@ addMovieBtn.onclick = function(e){
 }
 
 window.addEventListener('click', (e) =>{
-    if(e.target == modal){
+    console.log(e.target.parentNode.parentNode.dataset.index)
+    if(e.target === modal){
         modal.style.display = 'none'
+    }
+
+    if(e.target.id === 'watched'){
+        let index = e.target.parentNode.parentNode.dataset.index;
+        myDiary[index].watched = !myDiary[index].watched;
     }
 });
 
@@ -59,6 +65,11 @@ function Movie(name, director, year, duration, genre, watched, index){
     this.genre = genre || 'Not informed';
     this.watched = Boolean(watched) || false;
     this.index = index;
+}
+
+Movie.prototype.toggleWatched = function(){
+    Movie.watched = !Movie.watched;
+    console.log(Movie.watched)
 }
 
 function addMovieToLibrary(name, director, year, duration, genre, watched, index){
