@@ -57,7 +57,7 @@ moviesGrid.addEventListener('click', (e) => {
     }
 });
 
-function Movie(name, director, year, duration, genre, watched, index){
+/* function Movie(name, director, year, duration, genre, watched, index){
     this.name = name || '?';
     this.director =  director;
     this.year = year || '?';
@@ -65,11 +65,35 @@ function Movie(name, director, year, duration, genre, watched, index){
     this.genre = genre || 'Not informed';
     this.watched = Boolean(watched) || false;
     this.index = index;
-}
+} */
 
-Movie.prototype.toggleWatched = function(){
+/* Movie.prototype.toggleWatched = function(){
     Movie.watched = !Movie.watched;
     console.log(Movie.watched)
+} */
+
+class Movie{
+    constructor(name, director, year, duration, genre, watched, index){
+        this.name = name || '?';
+        this.director =  director || '?';
+        this.year = year || '?';
+        this.duration = duration;
+        this.genre = genre || 'Not informed';
+        this.watched = Boolean(watched) || false;
+        this.index = index;
+    };
+
+    toggleWatched(){
+        this.watched = !this.watched;
+    };
+
+    get movieName(){
+        return this.name;
+    }
+
+    set movieName(name){
+        this.name = name;
+    }
 }
 
 function addMovieToLibrary(name, director, year, duration, genre, watched, index){
